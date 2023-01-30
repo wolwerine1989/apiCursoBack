@@ -16,6 +16,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/employees',[App\Http\Controllers\EmployeeController::class,'index']);
 
+Route::post('/save',[\App\Http\Controllers\EmployeeController::class,'store']);
+
+Route::put('/update/{id}',[\App\Http\Controllers\EmployeeController::class,'update']);
+
+Route::delete('/delete/{id}',[\App\Http\Controllers\EmployeeController::class,'delete']);
+
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
