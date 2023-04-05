@@ -22,6 +22,8 @@ Route::put('/update/{id}',[\App\Http\Controllers\EmployeeController::class,'upda
 
 Route::delete('/delete/{id}',[\App\Http\Controllers\EmployeeController::class,'delete']);
 
+Route::get('/send/email',[App\Http\Controllers\HomeController::class,'mail'])->name('email');
+
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
