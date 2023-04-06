@@ -11,7 +11,7 @@ class HomeController extends Controller
 {
     public function mail()
     {
-        Mail::to('therichposts@gmail.com')->send(new PaymentDone());
-        return response()->json(["message" => "Email sent successfully."]);
+        Mail::to('ejemplos@gmail.com')->send(new PaymentDone());
+        return response()->json(["message" => "Se a enviado el mail exitosamente."]);
     }
 }
