@@ -9,9 +9,4 @@ use Illuminate\Support\Facades\Mail;
 
 class HomeController extends Controller
 {
-    public function mail()
-    {
-        // Mail::to("fernatouc@gmail.com")->send(new PaymentDone());
-        // return response()->json(["message" => "Se a enviado el mail exitosamente."]);
-    }
 }
