@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Employee;
 use Illuminate\Http\Request;
 
+use App\Mail\PaymentDone;
+use Illuminate\Support\Facades\Mail;
+
 class EmployeeController extends Controller
 {
     //hace un select * from employee de la bd y los muestra en la pagina
@@ -22,8 +25,9 @@ class EmployeeController extends Controller
             'email'    =>  $request->input ('email'),
             'telefono' =>  $request->input ('telefono'),
             'mensaje'  =>  $request->input ('mensaje'),
-    ]);
+        ]);
         $employee->save();
+        Mail::to($request->input ('email'))->send(new PaymentDone());
         return response()->json('Empleado creado');
     }
 
